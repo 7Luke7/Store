@@ -23,5 +23,3 @@ app.use(error_handler)
 app.use(invalid_path)
 
 concat()
-
-export default app

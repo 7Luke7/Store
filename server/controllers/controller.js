@@ -5,7 +5,7 @@ const { request_product_category_handler } = require("./sub_controller")
 
 const get_all_electronics = async (req, res, next) => {
     try {
-        await requestData(req, res, ElectronicsModel)
+        res.send("hello world")
     } catch (error) {
         next(error)
     }

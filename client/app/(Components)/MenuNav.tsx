@@ -12,15 +12,15 @@ const MenuNav = () => {
             subCategories: [
               {
                 text: "Laptop",
-                link: "https://store-kybu.vercel.app/category/laptops?page=1",
+                link: "/category/laptops?page=1",
               },
               {
                 text: "Smartphone",
-                link: "https://store-kybu.vercel.app/category/smartphones?page=1",
+                link: "/category/smartphones?page=1",
               },
               {
                 text: "See all",
-                link: "https://store-kybu.vercel.app/electronics?page=1",
+                link: "/electronics?page=1",
               },
             ]
         },
@@ -34,7 +34,7 @@ const MenuNav = () => {
           subCategories: [
             {
               text: "Skin Care",
-              link: "https://store-kybu.vercel.app/category/skincare?page=1",
+              link: "/category/skincare?page=1",
             },
           ]
         },
@@ -48,7 +48,7 @@ const MenuNav = () => {
           subCategories: [
             {
               text: "Groceries",
-              link: "https://store-kybu.vercel.app/category/groceries?page=1",
+              link: "/category/groceries?page=1",
             },
           ]
         },
@@ -62,19 +62,19 @@ const MenuNav = () => {
           subCategories: [
             {
               text: "Home-decoration",
-              link: "https://store-kybu.vercel.app/category/home-decoration?page=1",
+              link: "/category/home-decoration?page=1",
             },
             {
               text: "Furniture",
-              link: "https://store-kybu.vercel.app/category/furniture?page=1",
+              link: "/category/furniture?page=1",
             },
             {
               text: "Lighting",
-              link: "https://store-kybu.vercel.app/category/lighting?page=1",
+              link: "/category/lighting?page=1",
             },
             {
               text: "See all",
-              link: "https://store-kybu.vercel.app/home-furniture?page=1",
+              link: "/home-furniture?page=1",
             },
           ]          
         },
@@ -86,40 +86,40 @@ const MenuNav = () => {
           subCategories: [
             {
               text: "Tops",
-              link: "https://store-kybu.vercel.app/category/tops?page=1",
+              link: "/category/tops?page=1",
             },
             {
               text: "Women dresses",
-              link: "https://store-kybu.vercel.app/category/womens-dresses?page=1",
+              link: "/category/womens-dresses?page=1",
             },
             {
               text: "Women shoes",
-              link: "https://store-kybu.vercel.app/category/womens-shoes?page=1",
+              link: "/category/womens-shoes?page=1",
             },
            
             {
               text: "Men shoes",
-              link: "https://store-kybu.vercel.app/category/mens-shoes?page=1",
+              link: "/category/mens-shoes?page=1",
             },
             {
               text: "Men watches",
-              link: "https://store-kybu.vercel.app/category/mens-watches?page=1",
+              link: "/category/mens-watches?page=1",
             },
             {
               text: "Women watches",
-              link: "https://store-kybu.vercel.app/category/womens-watches?page=1",
+              link: "/category/womens-watches?page=1",
             },
             {
               text: "Women Bags",
-              link: "https://store-kybu.vercel.app/category/womens-bags?page=1",
+              link: "/category/womens-bags?page=1",
             },
             {
               text: "womens Jewellery",
-              link: "https://store-kybu.vercel.app/category/womens-jewellery?page=1",
+              link: "/category/womens-jewellery?page=1",
             },
             {
               text: "See all",
-              link: "https://store-kybu.vercel.app/clothing-fashion?page=1",
+              link: "/clothing-fashion?page=1",
             },
           ] 
         },
@@ -132,15 +132,15 @@ const MenuNav = () => {
           ,
           subCategories: [{
             text: "Automotive",
-            link: "https://store-kybu.vercel.app/category/automotive?page=1",
+            link: "/category/automotive?page=1",
           },
           {
             text: "Motorcycle",
-            link: "https://store-kybu.vercel.app/category/motorcycle?page=1",
+            link: "/category/motorcycle?page=1",
           },
           {
             text: "See all",
-            link: "https://store-kybu.vercel.app/cars-parts?page=1",
+            link: "/cars-parts?page=1",
           },
         ] 
         },
@@ -153,7 +153,7 @@ const MenuNav = () => {
           ,
           subCategories: [{
             text: "Sunglasses",
-            link: "https://store-kybu.vercel.app/category/sunglasses?page=1",
+            link: "/category/sunglasses?page=1",
           },
         ] 
         },

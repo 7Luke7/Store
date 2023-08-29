@@ -95,7 +95,7 @@ export const request_clothin_fashion_data_landing = async () => {
 
 export const add_new_cart_product = async (data: any) => {
     try {
-        const res = await fetch(`https://store-api-4je2.onrender.com/store/store/products/cart`,
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/cart`,
          {
             method: "POST",
             headers: {

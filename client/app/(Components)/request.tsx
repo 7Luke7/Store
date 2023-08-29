@@ -1,8 +1,10 @@
 import { FetchError } from "../lib/exceptions"
+
 export const requestElectronicsData = async (filters: any) => {
-    try {        
+    try {
+        console.log(process.env.NEXT_PUBLIC_API_URL)  
         const { brand, page, sort} = filters
-        const res = await fetch(`http://localhost:5000/store/products/electronics?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/electronics?page=${page}&brand=${brand || ""}&sort=${sort}`)
         const data = await res.json()
         return data
     } catch (error) {
@@ -13,7 +15,7 @@ export const requestElectronicsData = async (filters: any) => {
 export const requestHomeFurnitureData = async (filters: any) => {
     try {        
         const { brand, page, sort} = filters
-        const res = await fetch(`http://localhost:5000/store/products/homefurniture?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/homefurniture?page=${page}&brand=${brand || ""}&sort=${sort}`)
         const data = await res.json()
         return data
     } catch (error) {
@@ -24,7 +26,7 @@ export const requestHomeFurnitureData = async (filters: any) => {
 export const requestClothingFashionData = async (filters: any) => {
     try {
         const { brand, page, sort} = filters
-        const res = await fetch(`http://localhost:5000/store/products/clothingfashion?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/clothingfashion?page=${page}&brand=${brand || ""}&sort=${sort}`)
         const data = await res.json()
         return data
     } catch (error) {
@@ -34,7 +36,7 @@ export const requestClothingFashionData = async (filters: any) => {
 
 export const requestSingleProduct = async (id: any) => {
     try {
-        const res = await fetch(`http://localhost:5000/store/product/${id}`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/product/${id}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -47,7 +49,7 @@ export const requestSingleProduct = async (id: any) => {
 
 export const requestProductsByCategory = async ({brand, page, sort, category}: any) => {
     try {
-        const res = await fetch(`http://localhost:5000/store/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`)
         const data = await res.json()
         return data
     } catch (error) {
@@ -57,7 +59,7 @@ export const requestProductsByCategory = async ({brand, page, sort, category}: a
 
 export const request_home_furniture_data_landing = async () => {
     try {
-        const res = await fetch(`http://localhost:5000/store/products/landing/home`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/landing/home`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -69,7 +71,7 @@ export const request_home_furniture_data_landing = async () => {
 
 export const request_electronic_data_landing = async () => {
     try {
-        const res = await fetch(`http://localhost:5000/store/products/landing/electronic`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/landing/electronic`, {
             cache: "no-cache"
     })
         const data = await res.json()
@@ -81,7 +83,7 @@ export const request_electronic_data_landing = async () => {
 
 export const request_clothin_fashion_data_landing = async () => {
     try {
-        const res = await fetch(`http://localhost:5000/store/products/landing/clothing`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/landing/clothing`, {
             cache: "no-cache"
        })
         const data = await res.json()
@@ -93,7 +95,7 @@ export const request_clothin_fashion_data_landing = async () => {
 
 export const add_new_cart_product = async (data: any) => {
     try {
-        const res = await fetch("http://localhost:5000/store/products/cart",
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/store/products/cart`,
          {
             method: "POST",
             headers: {
@@ -111,7 +113,7 @@ export const add_new_cart_product = async (data: any) => {
 
 export const get_cart_products = async (queryPage: any) => {
     try {
-        const res = await fetch(`http://localhost:5000/store/products/cart?page=${queryPage}`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/cart?page=${queryPage}`, {
             cache: "no-cache",
             next: {tags: ["cartproducts"]}
         })
@@ -124,7 +126,7 @@ export const get_cart_products = async (queryPage: any) => {
 
 export const clear_cart_products = async () => {
     try {
-        const res = await fetch("http://localhost:5000/store/products/cart", {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/cart`, {
             method: "DELETE",
             next: {tags: ["cartproducts"]}
         })
@@ -136,7 +138,7 @@ export const clear_cart_products = async () => {
 
 export const delete_cart_product = async (id: any) => {
     try {
-        const res = await fetch(`http://localhost:5000/store/products/cart/${id}`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/cart/${id}`, {
             method: "DELETE",
             next: {tags: ["cartproducts"]}
         })

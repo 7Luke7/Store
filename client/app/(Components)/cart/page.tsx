@@ -46,8 +46,8 @@ const page = async ({searchParams}: any) => {
         <div className="flex flex-col">
           <div className="flex ml-48 flex-col gap-20">
             {data.products.map((product: any, id: any) => {
-              return <div className="flex hover:border hover:border-slate-600 w-10/12 justify-between">
-               <div key={id} className="flex overflow-hidden" style={{height: "240px"}}>
+              return <div key={id} className="flex hover:border hover:border-slate-600 w-10/12 justify-between">
+               <div  className="flex overflow-hidden" style={{height: "240px"}}>
           <Link href={`product/${product._id}`} style={{width: "320px", height: "240px", position: "relative"}}>
           <Image src={product.thumbnail} fill priority={true} alt="product-image"></Image>
           </Link>

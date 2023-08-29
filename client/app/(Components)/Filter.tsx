@@ -76,8 +76,8 @@ const Filter = ({children}: any) => {
                         <span className="text-base text-gray-700 font-semibold">Featured {section.name}</span>
                       </button>
                         <div className="mt-5 justify-center">
-                          {section.options.map((option: any) => {
-                            return <div className="m-3 flex items-center">
+                          {section.options.map((option: any, id: any) => {
+                            return <div key={id} className="m-3 flex items-center">
                               <input type="checkbox" onChange={handleCheckbox} name={option.label} id={option.label} defaultValue={option.value} defaultChecked={option.isChecked} checked={option.checked} className={`form-checkbox w-4 h-4 rounded-full border-none focus:ring-gray-200`} />
                               <label htmlFor={option.label} className='text-gray-50 font-normal pl-2 text-xs'>{option.value}</label>
                             </div>

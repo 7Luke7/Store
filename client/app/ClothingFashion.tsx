@@ -16,8 +16,8 @@ const ClothingFashion = async () => {
           </Link>
       </div>
     <div className='grid grid-cols-4 md:grid-cols-3 lg:grid-cols-3 xl:pl-0 xs:grid-cols-none sm:grid-cols-2 sm:pl-0 xs:grid-rows-4 justify-items-center xs:pl-0 pl-12 md:pl-0 xs:justify-center mt-2'>
-      {clothingFashionData.map((product: any) => {
-        return <div className='overflow-hidden mb-10 hover:border hover:border-gray-900 rounded-t-xl w-80 xl:w-72 sm:w-72 md:w-60 lg:w-72' key={product["_id"]}>
+      {clothingFashionData.map((product: any, id: any) => {
+        return <div key={id} className='overflow-hidden mb-10 hover:border hover:border-gray-900 rounded-t-xl w-80 xl:w-72 sm:w-72 md:w-60 lg:w-72' key={product["_id"]}>
           <Link href={`product/${product._id}`}>
           <div className='relative h-52'>
             <Image alt={product.title} src={product["thumbnail"]} priority={false} sizes='w-full' fill={true}></Image>

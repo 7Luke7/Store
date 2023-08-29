@@ -17,7 +17,7 @@ const HomeFurnitureLanding = async () => {
       </div>
     <div className='grid grid-cols-4 md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 sm:pl-0 xs:grid-cols-none xl:pl-0 xs:grid-rows-4 justify-items-center xs:justify-center xs:pl-0 md:pl-0 pl-12 mt-2'>
       {HomeFurnitureData.map((product: any) => {
-        return <div key={product.id} className='overflow-hidden mb-10 hover:border hover:border-gray-900 rounded-t-xl w-80 xl:w-72 sm:w-72 md:w-60 lg:w-72' key={product["_id"]}>
+        return <div className='overflow-hidden mb-10 hover:border hover:border-gray-900 rounded-t-xl w-80 xl:w-72 sm:w-72 md:w-60 lg:w-72' key={product["_id"]}>
           <Link href={`product/${product._id}`}>
           <div className='relative h-52'>
             <Image alt={product.title} src={product["thumbnail"] } sizes='w-full' fill={true} priority={false}></Image>

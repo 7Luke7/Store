@@ -2,9 +2,10 @@ import React from 'react'
 import { add_new_cart_product } from './request'
 import { revalidateTag } from 'next/cache'
 
-const Cart = ({children}: any) => {
+const Cart = async ({children}: any) => {
     const handleCartRequest = async (formData: FormData) => {
       "use server"
+      console.log("hell")
       await add_new_cart_product(children)
       revalidateTag("cartproducts")
     }

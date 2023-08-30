@@ -9,6 +9,7 @@ const page = async ({params, searchParams}: any) => {
   const page = typeof searchParams?.page === "string" ? Number(searchParams?.page) : 1
   const brand = searchParams.brand
   const sort = searchParams.sort || ""
+  console.log(params, searchParams)
   const data = await requestProductsByCategory(
     {
       brand: brand,
@@ -17,6 +18,7 @@ const page = async ({params, searchParams}: any) => {
       category: params.category
     }
   )
+  console.log(data)
   return (
     <div className='bg-gray-950'>
       <Header></Header>

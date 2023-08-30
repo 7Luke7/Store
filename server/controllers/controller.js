@@ -29,25 +29,12 @@ const get_all_clothing_fashion = async (req, res, next) => {
 
 const get_single_product = async (req, res, next) => {
     try {
-        const get_product_electronic = await ElectronicsModel.find({_id: {$in: req.params.id}})
-        if (get_product_electronic.length > 0) {
+        const product = await AllProductsModel.find({_id: {$in: req.params.id}})
+        if (product.length > 0) {
             return res.status(200).send({
-                single: get_product_electronic
+                single: product
             })
         }
-        const get_product_home = await HomeFurnitureModel.find({_id: {$in: req.params.id}})
-        if (get_product_home.length > 0) {
-            return res.status(200).send({
-                single: get_product_home
-            })
-        }
-        const get_product_clothing = await ClothingFashionModel.find({_id: {$in: req.params.id}})
-        if (get_product_clothing.length > 0) {
-            return res.status(200).send({
-                single: get_product_clothing
-            })
-        }
-        
     } catch (error) {
         next(error)
     }

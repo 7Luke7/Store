@@ -1,10 +1,11 @@
 import React from 'react'
-import Rating from '../../../Rating'
 import Image from 'next/image'
 import Cart from '../../../CartComponent'
+import Rating from '../../../Rating'
 
-const SingleProduct = ({children}: any) => {
+const SingleCatProduct = ({children}: any) => {
   const product = children
+  console.log(product)
   return (
     <div>
       <div className='sm:hidden xs:hidden md:hidden flex mt-36 ml-60'>
@@ -75,4 +76,4 @@ const SingleProduct = ({children}: any) => {
   )
 }
 
-export default SingleProduct
+export default SingleCatProduct

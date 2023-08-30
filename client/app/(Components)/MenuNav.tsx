@@ -160,9 +160,9 @@ const MenuNav = () => {
     ]
   return (
       <div className='flex justify-center'>
-        <div className='flex xs:flex-col  md:flex-col sm:flex-col'>
+        <div className='flex xs:flex-col md:flex-col sm:flex-col'>
         {arr.map((item: any, id:any) => {
-            return <Menu key={id} as="div" className="xs:w-80 mx-5 lg:mx-1.5 xs:pt-4 sm:pt-4 sm:w-96 md:pt-4 md:w-96 flexrelative inline-block">
+            return <Menu key={id} as="div" className="xs:px-5 xs:w-80 mx-5 lg:mx-1.5 xs:pt-4 sm:pt-4 sm:w-96 md:pt-4 md:w-96 flexrelative inline-block">
             <div className='w-full'>
               <Menu.Button aria-label='expand categories button' className="flex lg:gap-0.3 gap-1.5 xs:justify-between sm:justify-between md:justify-between w-full items-end text-sm font-semibold text-white shadow-sm">
                 <p className='text-xs'>

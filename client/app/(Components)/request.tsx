@@ -2,10 +2,12 @@ import { FetchError } from "../lib/exceptions"
 
 export const requestElectronicsData = async (filters: any) => {
     try {
-        console.log(process.env.NEXT_PUBLIC_API_URL)  
         const { brand, page, sort} = filters
-        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/electronics?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/electronics?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+            cache: "no-cache"
+        })
         const data = await res.json()
+        console.log(data)
         return data
     } catch (error) {
         throw new FetchError()
@@ -15,7 +17,9 @@ export const requestElectronicsData = async (filters: any) => {
 export const requestHomeFurnitureData = async (filters: any) => {
     try {        
         const { brand, page, sort} = filters
-        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/homefurniture?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/homefurniture?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+            cache: "no-cache"
+        })
         const data = await res.json()
         return data
     } catch (error) {
@@ -26,7 +30,9 @@ export const requestHomeFurnitureData = async (filters: any) => {
 export const requestClothingFashionData = async (filters: any) => {
     try {
         const { brand, page, sort} = filters
-        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/clothingfashion?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/clothingfashion?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+            cache: "no-cache"
+        })
         const data = await res.json()
         return data
     } catch (error) {
@@ -49,8 +55,12 @@ export const requestSingleProduct = async (id: any) => {
 
 export const requestProductsByCategory = async ({brand, page, sort, category}: any) => {
     try {
-        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`)
+        console.log("hi")
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+            cache: "no-cache"
+        })
         const data = await res.json()
+        console.log(data)
         return data
     } catch (error) {
         throw new FetchError()

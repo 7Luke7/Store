@@ -28,9 +28,6 @@ const Pagination = ({children}: any) => {
                         </svg>
                         </Link>    
                     </div>
-                    {/* <p className='text-xs pl-5 font-medium pt-3 text-gray-500'>
-                            {data.numberOfProducts.count_elecs < 12 ? `${page + 1 <= data.numberOfProducts.count_elecs ? (page * Math.round(data.numberOfPages.pages) - (page - 1) + 1) : data.NumberOfProducts.count_elecs } out of ${data.numberOfProducts.count_elecs}` : `out of ${data.numberOfProducts.count_elecs}`} 
-                        </p> */}
                 </div>
             </div>
         </>

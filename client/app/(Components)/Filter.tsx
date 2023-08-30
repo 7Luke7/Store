@@ -66,7 +66,7 @@ const Filter = ({children}: any) => {
     setCheckedBrand(handledvalues)
     }
   return (
-    <div className={`w-3/12`}>
+    <div className="w-3/12 flex justify-center xs:w-full sm:w-full md:w-full">
             <form onSubmit={SubmitFilter} className='flex w-10/12 flex-col justify-between'>
             {checkedBrand?.map((section: any, id: any) => (
               <div key={id}>

@@ -43,7 +43,7 @@ const page = async ({searchParams}: any) => {
           </button>
           </form>
           </div>
-        <div className="flex flex-col">
+        <div className="xs:hidden md:hidden sm:hidden flex flex-col">
           <div className="flex ml-48 flex-col gap-20">
             {data.products.map((product: any, id: any) => {
               return <div key={id} className="flex hover:border hover:border-slate-600 w-10/12 justify-between">
@@ -91,6 +91,43 @@ const page = async ({searchParams}: any) => {
       })}
     </div>        
         </div>
+        <div className="lg:hidden xl:hidden 2xl:hidden">
+    <div className='grid gap-8 grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xl:pl-0 xs:grid-cols-none xs:grid-rows-4 justify-items-center xs:pl-0 sm:pl-0 md:pl-0 pl-12 mt-2'>
+      {data.products.map((product: any) => {        
+        return <div className='overflow-hidden  mb-10 hover:border hover:border-gray-900 rounded-t-xl w-80 xl:w-72 sm:w-72 md:w-60' key={product["_id"]}>
+          <Link href={`product/${product._id}`}>
+          <div className='relative h-52'>
+            <Image alt={product.title} src={product["thumbnail"]} sizes='w-full' priority={true} fill={true}></Image>
+          </div>
+          </Link>
+          <div className='p-2 flex flex-col justify-between'>
+          <div className='flex  justify-around'>
+            <div>
+              <Link href={`product/${product._id}`}>
+              <h2 className='text-white'>{product["title"]}</h2>
+              </Link>
+              <Link href={`product/${product._id}`}>
+              <p className='text-sm text-gray-500 w-7/12 font-normal'>{product["description"].slice(0, 40)}...</p>
+              </Link>
+            </div>
+            <div className='flex flex-col'>
+              <p className='text-gray-600 line-through text-xs'>${
+                Math.round((product["price"] / 100 )* product["discountPercentage"] + product["price"])
+              }</p>
+              <p className='text-slate-50 text-md pl-1'>${product["price"]}</p>
+              <p className='text-gray-500 text-xs pl-1 pt-1'>{product["stock"]} in stock</p>
+            </div>
+          </div>
+          <div className='flex justify-between items-center'>
+          <div className='flex justify-center items-end space-x-1 md:items-center'>
+            <Rating rating={product["rating"]}></Rating>
+          </div>
+          </div>
+          </div>
+        </div>
+      })}
+    </div>      
+    </div>
     </div>
     <div className="flex mt-10 justify-end py-10 lg:px-0 sm:px-6 px-4 mr-4">
                 <div className="flex items-center justify-end border-t border-gray-200">

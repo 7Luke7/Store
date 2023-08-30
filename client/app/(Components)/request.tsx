@@ -42,7 +42,7 @@ export const requestClothingFashionData = async (filters: any) => {
 
 export const requestSingleProduct = async (id: any) => {
     try {
-        const res = await fetch(`https://store-api-4je2.onrender.com/store/product/${id}`, {
+        const res = await fetch(`http://localhost:5000/store/product/${id}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -55,7 +55,6 @@ export const requestSingleProduct = async (id: any) => {
 
 export const requestProductsByCategory = async ({brand, page, sort, category}: any) => {
     try {
-        console.log("hi")
         const res = await fetch(`https://store-api-4je2.onrender.com/store/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`, {
             cache: "no-cache"
         })

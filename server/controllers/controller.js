@@ -30,11 +30,9 @@ const get_all_clothing_fashion = async (req, res, next) => {
 const get_single_product = async (req, res, next) => {
     try {
         const product = await AllProductsModel.find({_id: {$in: req.params.id}})
-        if (product.length > 0) {
-            return res.status(200).send({
-                single: product
-            })
-        }
+        res.status(200).json({
+            single: product
+        })
     } catch (error) {
         next(error)
     }
@@ -62,7 +60,7 @@ const get_products_by_category = async (req, res, next) => {
 const get_electronic_landing = async (req, res, next) => {
     try {
         const request_electronic = await ElectronicsModel.find({}).limit(8)
-        res.status(200).send(request_electronic)
+        res.status(200).json(request_electronic)
     } catch (error) {
         next(error)
     }
@@ -71,7 +69,7 @@ const get_electronic_landing = async (req, res, next) => {
 const get_home_landing = async (req, res, next) => {
     try {
         const request_home_furniture = await HomeFurnitureModel.find({}).limit(8)
-        res.status(200).send(request_home_furniture)
+        res.status(200).json(request_home_furniture)
     } catch (error) {
         next(error)
     }
@@ -80,7 +78,7 @@ const get_home_landing = async (req, res, next) => {
 const get_clothing_landing = async (req, res, next) => {
     try {
         const request_clothing = await ClothingFashionModel.find({}).limit(8)
-        res.status(200).send(request_clothing)
+        res.status(200).json(request_clothing)
     } catch (error) {
         next(error)
     }
@@ -91,7 +89,7 @@ const get_cart_produtcs = async (req, res, next) => {
         const skip = ((req.query.page - 1) * 8)
         const products = await CartModel.find({}).limit(8).skip(skip)
         const count_products = await CartModel.find().countDocuments()
-        res.status(200).send({
+        res.status(200).json({
             products,
             numberOfDocuments: count_products
         })

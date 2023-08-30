@@ -119,14 +119,22 @@ const page = async ({searchParams}: any) => {
             </div>
           </div>
           <div className='flex justify-between items-center'>
-          <div className='flex justify-center items-end space-x-1 md:items-center'>
+          <div className='flex justify-between items-center space-x-1 md:items-center'>
             <Rating rating={product["rating"]}></Rating>
           </div>
+          <form action={cartRemoveHandler} className='m-1 mr-3'>
+          <input type="hidden" name={product._id} />
+          <button type="submit" className="focus:outline-none flex items-center h-8 text-white hover:bg-red-500 bg-red-400 focus font-medium rounded-2xl text-3xl px-3  mr-2 mb-2">
+            -
+          </button>  
+        </form>
           </div>
           </div>
+          
         </div>
       })}
-    </div>      
+    </div> 
+         
     </div>
     </div>
     <div className="flex mt-10 justify-end py-10 lg:px-0 sm:px-6 px-4 mr-4">

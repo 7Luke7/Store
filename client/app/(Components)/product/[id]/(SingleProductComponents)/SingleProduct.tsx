@@ -5,7 +5,6 @@ import Cart from '../../../CartComponent'
 
 const SingleProduct = ({children}: any) => {
   const product = children
-  console.log(product)
   return (
     <div>
       <div className='sm:hidden xs:hidden md:hidden flex mt-36 ml-60'>

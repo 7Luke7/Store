@@ -7,7 +7,6 @@ export const requestElectronicsData = async (filters: any) => {
             cache: "no-cache"
         })
         const data = await res.json()
-        console.log(data)
         return data
     } catch (error) {
         throw new FetchError()
@@ -42,11 +41,10 @@ export const requestClothingFashionData = async (filters: any) => {
 
 export const requestSingleProduct = async (id: any) => {
     try {
-        const res = await fetch(`http://localhost:5000/store/product/${id}`, {
+        const res = await fetch(`https://store-api-4je2.onrender.com/store/product/${id}`, {
             cache: "no-cache"
         })
         const data = await res.json()
-        console.log(data)
         return data
     } catch (error) {
         throw new FetchError()
@@ -59,7 +57,6 @@ export const requestProductsByCategory = async ({brand, page, sort, category}: a
             cache: "no-cache"
         })
         const data = await res.json()
-        console.log(data)
         return data
     } catch (error) {
         throw new FetchError()

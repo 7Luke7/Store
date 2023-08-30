@@ -9,7 +9,6 @@ const Page = async ({searchParams}: any) => {
   const page = typeof searchParams?.page === "string" ? Number(searchParams?.page) : 1
   const brand = searchParams.brand
   const sort = searchParams.sort || ""
-  console.log(process.env.API_URL) 
   const data = await requestElectronicsData(
     {
       brand: brand,

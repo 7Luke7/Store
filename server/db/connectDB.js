@@ -3,12 +3,12 @@ const mongoose = require("mongoose")
 const {populate_data} = require("../populate")
 
 const setup_db  = async () => {
-    mongoose.connect(process.env.MONGO_URI).then(() => {
-        console.log("db connected")
-    }).catch((err) => {
-        console.log(err)
-    })
-    await populate_data()
+    try {
+        await mongoose.connect(process.env.MONGO_URI)
+        await populate_data()
+    } catch (error) {
+        console.log("connection error")
+    }
 }
 
 module.exports = {setup_db}

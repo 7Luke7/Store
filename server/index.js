@@ -12,10 +12,9 @@ app.use(cors())
 app.use("/store", router)
 
 const concat = async () => {
-    await setup_db().then(() => {
-        app.listen(port, () => {
-            console.log(`Listening on port ${port}`)
-        })
+    await setup_db()
+    app.listen(port, () => {
+        console.log(`Listening on port ${port}`)
     })
 }
 

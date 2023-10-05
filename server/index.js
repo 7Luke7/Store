@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const app = express()
 const cors = require("cors")
@@ -9,6 +10,8 @@ const { invalid_path } = require("./middleware/middleware")
 
 app.use(express.json())
 app.use(cors())
+app.use(error_handler)
+app.use(invalid_path)
 app.use("/store", router)
 
 const concat = async () => {
@@ -17,8 +20,5 @@ const concat = async () => {
         console.log(`Listening on port ${port}`)
     })
 }
-
-app.use(error_handler)
-app.use(invalid_path)
 
 concat()

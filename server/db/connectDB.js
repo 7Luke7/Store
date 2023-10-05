@@ -4,8 +4,11 @@ const {populate_data} = require("../populate")
 
 const setup_db  = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI)
-        await populate_data()
+        mongoose.connect(process.env.MONGO_URI).then(() => {
+            populate_data()
+        }).catch((err) => {
+            console.log(err)
+        })
     } catch (error) {
         console.log("connection error")
     }

@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Rating from './(Components)/Rating'
-import { request_clothin_fashion_data_landing } from './(Components)/request'
 import Cart from './(Components)/CartComponent'
+import { request_clothin_fashion_data_landing } from './(Components)/request'
 
 const ClothingFashion = async () => {
   const clothingFashionData = await request_clothin_fashion_data_landing()

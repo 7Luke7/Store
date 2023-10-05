@@ -15,10 +15,14 @@ app.use(invalid_path)
 app.use("/store", router)
 
 const concat = async () => {
-    await setup_db()
-    app.listen(port, () => {
-        console.log(`Listening on port ${port}`)
-    })
+    try {
+        await setup_db()
+        app.listen(port, () => {
+            console.log(`Listening on port ${port}`)
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 concat()

@@ -4,7 +4,7 @@ const nextConfig = {
         serverActions: true,
       },
       env: {
-        URL: "https://store-api-4je2.onrender.com/store"
+        URL: "https://store-server-1wkr.onrender.com/store"
       },
     images: {
         remotePatterns: [

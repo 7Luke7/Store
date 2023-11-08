@@ -3,7 +3,7 @@ import { FetchError } from "../lib/exceptions"
 export const requestElectronicsData = async (filters: any) => {
     try {
         const { brand, page, sort} = filters
-        const res = await fetch(`${process.env.URL}/store/products/electronics?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+        const res = await fetch(`${process.env.URL}/products/electronics?page=${page}&brand=${brand || ""}&sort=${sort}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -16,7 +16,7 @@ export const requestElectronicsData = async (filters: any) => {
 export const requestHomeFurnitureData = async (filters: any) => {
     try {        
         const { brand, page, sort} = filters
-        const res = await fetch(`${process.env.URL}/store/products/homefurniture?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+        const res = await fetch(`${process.env.URL}/products/homefurniture?page=${page}&brand=${brand || ""}&sort=${sort}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -29,7 +29,7 @@ export const requestHomeFurnitureData = async (filters: any) => {
 export const requestClothingFashionData = async (filters: any) => {
     try {
         const { brand, page, sort} = filters
-        const res = await fetch(`${process.env.URL}/store/products/clothingfashion?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+        const res = await fetch(`${process.env.URL}/products/clothingfashion?page=${page}&brand=${brand || ""}&sort=${sort}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -41,7 +41,7 @@ export const requestClothingFashionData = async (filters: any) => {
 
 export const requestSingleProduct = async (id: any) => {
     try {
-        const res = await fetch(`${process.env.URL}/store/product/${id}`, {
+        const res = await fetch(`${process.env.URL}/product/${id}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -53,7 +53,7 @@ export const requestSingleProduct = async (id: any) => {
 
 export const requestProductsByCategory = async ({brand, page, sort, category}: any) => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`, {
+        const res = await fetch(`${process.env.URL}/products/category/${category}?page=${page}&brand=${brand || ""}&sort=${sort}`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -65,7 +65,7 @@ export const requestProductsByCategory = async ({brand, page, sort, category}: a
 
 export const request_home_furniture_data_landing = async () => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/landing/home`, {
+        const res = await fetch(`${process.env.URL}/products/landing/home`, {
             cache: "no-cache"
         })
         const data = await res.json()
@@ -77,7 +77,7 @@ export const request_home_furniture_data_landing = async () => {
 
 export const request_electronic_data_landing = async () => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/landing/electronic`, {
+        const res = await fetch(`${process.env.URL}/products/landing/electronic`, {
             cache: "no-cache"
     })
         const data = await res.json()
@@ -89,7 +89,7 @@ export const request_electronic_data_landing = async () => {
 
 export const request_clothin_fashion_data_landing = async () => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/landing/clothing`, {
+        const res = await fetch(`${process.env.URL}/products/landing/clothing`, {
             cache: "no-cache"
        })
         const data = await res.json()
@@ -101,7 +101,7 @@ export const request_clothin_fashion_data_landing = async () => {
 
 export const add_new_cart_product = async (data: any) => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/cart`,
+        const res = await fetch(`${process.env.URL}/products/cart`,
          {
             method: "POST",
             headers: {
@@ -119,7 +119,7 @@ export const add_new_cart_product = async (data: any) => {
 
 export const get_cart_products = async (queryPage: any) => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/cart?page=${queryPage}`, {
+        const res = await fetch(`${process.env.URL}/products/cart?page=${queryPage}`, {
             cache: "no-cache",
             next: {tags: ["cartproducts"]}
         })
@@ -132,7 +132,7 @@ export const get_cart_products = async (queryPage: any) => {
 
 export const clear_cart_products = async () => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/cart`, {
+        const res = await fetch(`${process.env.URL}/products/cart`, {
             method: "DELETE",
             next: {tags: ["cartproducts"]}
         })
@@ -144,7 +144,7 @@ export const clear_cart_products = async () => {
 
 export const delete_cart_product = async (id: any) => {
     try {
-        const res = await fetch(`${process.env.URL}/store/products/cart/${id}`, {
+        const res = await fetch(`${process.env.URL}/products/cart/${id}`, {
             method: "DELETE",
             next: {tags: ["cartproducts"]}
         })

@@ -3,6 +3,9 @@ const nextConfig = {
     experimental: {
         serverActions: true,
       },
+      env: {
+        URL: "https://store-api-4je2.onrender.com/store"
+      },
     images: {
         remotePatterns: [
             {
